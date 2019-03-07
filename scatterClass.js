@@ -10,7 +10,7 @@ function(err)
   console.log(err)
 })
 
-var ddrawGraph = function(data)
+var drawGraph = function(data)
 {
   var screen =
   {
@@ -87,3 +87,8 @@ legendLines.append("text")
            .attr("y",10)
            .text(function(d) {return d.name})
           
+var xAxis = d3.axisBottom(xScale);
+  
+  svg.append("g").classed("xAxis",true)
+     .call(xAxis)
+     .attr("transform", "translate(" +margins.left+"," + (margins.top+height+10)+")")
