@@ -27,7 +27,7 @@ var margins =
   top:10,
   bottom:10,
   left:10,
-  right:10
+  right:100
 }
 
 var width = screen.width -margins.left -margins.right;
@@ -73,7 +73,7 @@ var legendLines = legend.selectAll("g")
                         .enter()
                         .append("g")
                         .classed("legendLine",true)
-                        .attr("transform",function(d,i) {return "translate(0," +(i*12)+")"; })
+                        .attr("transform",function(d,i) {return "translate(0," +(i*20)+")"; })
                                                  
 legendLines.append("rect")
            .attr("x",0)
@@ -84,6 +84,6 @@ legendLines.append("rect")
 
 legendLines.append("text")
            .attr("x",20)
-           .attr("y",0)
+           .attr("y",10)
            .text(function(d) {return d.name})
           
